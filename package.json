@@ -1,0 +1,19 @@
+{
+  "name": "@joai/skills",
+  "version": "1.0.0",
+  "description": "Agent skills for Warp Protocol and JoAi platform",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoAiHQ/skills"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "skills",
+    "warps",
+    "blockchain",
+    "web3"
+  ],
+  "author": "JoAi",
+  "license": "MIT"
+}
