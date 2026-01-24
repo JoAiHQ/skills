@@ -1,5 +1,5 @@
 ---
-name: warp-protocol
+name: warp-guidelines
 description: Complete guide for creating valid Warp JSON definitions for the Warp Protocol
 metadata:
   tags: warps, blockchain, web3, transactions, smart-contracts, ai
