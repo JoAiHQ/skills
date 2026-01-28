@@ -1,6 +1,6 @@
 ---
-name: warp-guidelines
-description: Complete guide for creating valid Warp JSON definitions for the Warp Protocol
+name: warps
+description: The complete guide to creating and modifying Warps (Warp Protocol v3)
 metadata:
   tags: warps, blockchain, web3, transactions, smart-contracts, ai
   version: 3.0.0
@@ -8,85 +8,29 @@ metadata:
 
 # Warp Protocol
 
-This skill enables creating **Warp JSON** definitions. A Warp is a declarative JSON object that defines executable blockchain actions, smart contract interactions, data collection, and AI tool integrations.
+This skill provides expert knowledge on the **Warp Protocol**, a standard for declarative, cross-chain executable actions.
 
-## When to Use
+## Documentation Reference
 
-Use this skill when:
-- Creating new Warp definitions
-- Modifying existing Warps
-- Building blockchain transaction UIs
-- Integrating smart contracts with AI agents
-- Working with the JoAi or usewarp.to platforms
+The authoritative, up-to-date documentation is hosted at **[docs.joai.ai](https://docs.joai.ai/warps/general)**.
 
-## How to Use
+Refer to the specific sections below for detailed specifications:
 
-Read the rule files for detailed explanations and examples:
+- **[Specifications](https://docs.joai.ai/warps/specifications)**: **START HERE**. The central index and high-level protocol overview.
+- **[Action Types](https://docs.joai.ai/warps/action-types)**: Detailed reference for all 7 action types (`transfer`, `contract`, `mcp`, etc.).
+- **[Inputs](https://docs.joai.ai/warps/inputs)**: How to define user inputs, validation, and modifiers.
+- **[Variables](https://docs.joai.ai/warps/variables)**: Scoping, interpolation, and environment variables.
+- **[Outputs](https://docs.joai.ai/warps/outputs)**: Extracting results and using JS transforms.
+- **[Chains](https://docs.joai.ai/warps/chains)**: Supported blockchains, gas limits, and address formats.
+- **[Alerts](https://docs.joai.ai/warps/alerts)**: Configuring execution notifications.
+- **[Chaining](https://docs.joai.ai/warps/chaining)**: Creating multi-step workflows.
+- **[Internationalization](https://docs.joai.ai/warps/i18n)**: Localization guide.
+- **[Messages](https://docs.joai.ai/warps/messages)**: User and AI feedback messages.
 
-### Core Concepts
-- [rules/core-structure.md](rules/core-structure.md) - Root Warp JSON structure and required fields
-- [rules/inputs.md](rules/inputs.md) - Input types, sources, positions, and validation
-- [rules/variables.md](rules/variables.md) - Variables, interpolation, and global values
-- [rules/chains.md](rules/chains.md) - Multi-chain support and chain configuration
+## Workflow for AI Agents
 
-### Action Types
-- [rules/action-transfer.md](rules/action-transfer.md) - Transfer tokens and native currency
-- [rules/action-contract.md](rules/action-contract.md) - Execute smart contract functions
-- [rules/action-query.md](rules/action-query.md) - Query contract state (read-only)
-- [rules/action-collect.md](rules/action-collect.md) - Collect data via HTTP requests
-- [rules/action-link.md](rules/action-link.md) - Navigate to external URLs
-- [rules/action-mcp.md](rules/action-mcp.md) - Execute MCP (Model Context Protocol) tools
-- [rules/action-prompt.md](rules/action-prompt.md) - Generate text using AI prompts
-
-### Advanced Features
-- [rules/output.md](rules/output.md) - Extract and transform execution results
-- [rules/messages.md](rules/messages.md) - Custom success and error messages
-- [rules/chaining.md](rules/chaining.md) - Link Warps together with next steps
-- [rules/alerts.md](rules/alerts.md) - Trigger notifications based on conditions
-- [rules/i18n.md](rules/i18n.md) - Internationalization and localized text
-
-## Quick Reference
-
-### Minimal Warp Structure
-
-```json
-{
-  "protocol": "warp:3.0.0",
-  "name": "Category: Name",
-  "title": "User-Facing Title",
-  "description": "Brief description of what this Warp does.",
-  "actions": [
-    {
-      "type": "transfer",
-      "label": "Send"
-    }
-  ]
-}
-```
-
-### Supported Action Types
-
-| Type | Purpose | Required Fields |
-|------|---------|-----------------|
-| `transfer` | Send tokens/currency | label |
-| `contract` | Call smart contract | label, gasLimit |
-| `query` | Read contract state | label |
-| `collect` | HTTP data collection | label |
-| `link` | Navigate to URL | label, url |
-| `mcp` | MCP tool execution | label |
-| `prompt` | AI text generation | label, prompt |
-
-### Supported Chains
-
-`multiversx`, `vibechain`, `sui`, `ethereum`, `base`, `arbitrum`, `polygon`, `somnia`, `fastset`, `solana`, `near`
-
-## Validation Checklist
-
-Before finalizing a Warp:
-
-1. ✅ Protocol is `"warp:3.0.0"`
-2. ✅ Action `type` matches user intent
-3. ✅ All `{{variables}}` have corresponding inputs with `as` field
-4. ✅ Input `type` fields are explicit (`string`, `uint256`, `address`)
-5. ✅ Contract actions have `abi` signature and `gasLimit`
-6. ✅ Required inputs are marked with `required: true`
+1.  **Understand**: Visit the **Specifications** link to grasp the Warp structure.
+2.  **Select Action**: Check **Action Types** to choose the right action (e.g., `contract` vs `transfer`).
+3.  **Define Inputs**: Use **Inputs** documentation to correctly type and source user data.
+4.  **Target Chain**: Consult **Chains** for chain-specific values (gas limits, native token units).
+5.  **Validate**: Ensure your generated JSON matches the schema defined in the docs.
