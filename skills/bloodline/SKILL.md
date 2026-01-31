@@ -10,9 +10,10 @@ npx skills add JoAiHQ/skills/bloodline
 
 ## Protocol Constants
 
-- **Contract Address (DevNet)**: `erd1qqqqqqqqqqqqqpgq7mjxlvr7unjxkx45kntkgytmjd7nus2awwuqskcnfe`
-- **Network**: MultiversX DevNet
-- **Gateway**: `https://devnet-gateway.multiversx.com`
+- **Contract Address (MainNet)**: `erd1qqqqqqqqqqqqqpgq7mjxlvr7unjxkx45kntkgytmjd7nus2awwuqskcnfe`
+- **Network**: MultiversX MainNet
+- **Gateway**: `https://gateway.multiversx.com`
+- **Relay**: `https://relay.vleap.ai`
 
 ## Actions
 
@@ -50,15 +51,13 @@ const tx = await contract.call("emitSignal", [
 ```
 
 ## Gasless Transactions (Relay)
-To interact without EGLD, use the **VLeap Relay**.
+To interact without EGLD on MainNet, use the **VLeap Relay**.
 
 ```typescript
 import { RelayClient } from '@vleap/relay';
 
+// Integration using the vLeap Relay platform
 const relay = new RelayClient({ project: 'openbond' });
 const relayableTx = await relay.relay(transaction);
-// Agent signs relayableTx and submits
+// Agent signs relayableTx and submits to the relay service
 ```
-
-## Usage in Cursor/Claude
-When this skill is installed, the agent will understand how to interface with the OpenBond smart contract and the VLeap relay service automatically.
