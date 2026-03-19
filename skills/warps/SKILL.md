@@ -1,9 +1,8 @@
 ---
 name: warps
-description: The complete guide to creating and modifying Warps (Warp Protocol v3)
-metadata:
-  tags: warps, blockchain, web3, transactions, smart-contracts, ai
-  version: 3.0.0
+description: The complete guide to creating and modifying Warps — declarative, cross-chain executable actions (Warp Protocol v3)
+version: 3.0.0
+tags: [warps, blockchain, web3, transactions, smart-contracts, ai]
 ---
 
 # Warp Protocol
